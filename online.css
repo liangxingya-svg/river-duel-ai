@@ -21,3 +21,36 @@
  header .top-actions{gap:3px;flex-shrink:0}
  header .top-actions button,header .nav-button{padding-inline:6px}
 }
+
+/* Custom tables: side seats remain separated on narrow screens. */
+#capacityHint{display:block;margin-top:6px;font-size:11px;line-height:1.5}
+.large-table .online-table{height:680px}
+.large-table .online-seat{width:130px}
+.large-table .online-seat .seat-info b{max-width:80px;font-size:11px}
+.large-table .online-seat .hole-cards{display:none}
+.large-table .online-seat .bet-tag:not(:empty){top:auto;bottom:-23px}
+.large-table .online-seat.you .bet-tag:not(:empty){top:-26px;bottom:auto}
+@media(max-width:760px){
+ .large-table .online-table{height:640px;min-height:640px;width:auto;margin-inline:8px}
+ .large-table .online-seat{width:76px}
+ .large-table .online-seat .seat-info{grid-template-columns:1fr;padding:4px 4px 0;gap:0}
+ .large-table .online-seat .avatar{display:none}
+ .large-table .online-seat .seat-info b{max-width:66px;font-size:9px}
+ .large-table .online-seat .seat-info strong{font-size:13px}
+ .large-table .online-seat .seat-status{margin:3px -4px 0;padding:3px;font-size:9px;min-height:18px}
+ .large-table .online-seat .bet-tag:not(:empty){font-size:9px;padding:2px 4px;bottom:-20px}
+ .large-table .online-center .board{gap:2px}
+ .large-table .online-center .card{width:26px;height:42px;padding:3px;font-size:14px}
+ .large-table .online-center .card .suit{font-size:16px}
+ .large-table .table-dock{position:relative}
+}
+@media(max-width:370px){
+ .large-table .online-seat{width:70px}
+ .large-table .online-seat .seat-info b{max-width:60px}
+ .large-table .online-center .card{width:23px;height:38px;font-size:13px}
+}
+/* 0.0.5 reference table: stable desktop log rail and responsive replay. */
+.club-rail{display:none}#preActions{display:flex;gap:8px;padding-top:18px}#preActions[hidden]{display:none}#preActions button{flex:1;min-height:48px}#preActions button[aria-pressed=true]{background:#a4d8b4;color:#10261b}#potBreakdown{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;margin:10px auto;font-size:10px;color:#cfdbd0;max-width:340px}#potBreakdown span{border:1px solid #91bda240;border-radius:4px;padding:3px 5px}.live-log ol{list-style:none;padding:0;font-size:12px;max-height:65vh;overflow:auto}.live-log li{border-bottom:1px solid var(--line);padding:12px 0;line-height:1.65}.live-log h2{font-size:14px;font-weight:500}#journalSearch,#journalOutcome{width:100%;background:#14271d;color:var(--text);border:1px solid var(--line);padding:10px;margin:5px 0;border-radius:5px}.journal-entry button{margin-top:12px}#replayDialog{width:min(820px,calc(100% - 24px));max-height:94dvh;overflow:auto;background:#18211c;border:1px solid #516151;border-radius:9px;color:var(--text);padding:24px}#replayDialog::backdrop{background:#000b;backdrop-filter:blur(5px)}.replay-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);margin-bottom:16px}.replay-head h2{font-size:18px}.replay-head button{font-size:22px}#replayMeta{font-size:12px;line-height:1.8;color:var(--muted);padding-bottom:18px}.replay-felt{padding:16px;border:1px solid #4c6a55;background:#163e2e;border-radius:8px;text-align:center}.replay-felt .board{margin:20px 0}.replay-felt .card{width:55px;height:76px;font-size:23px}.replay-felt p{font-size:12px;color:var(--gold)}#replayStages{display:flex;gap:3px;margin:20px 0 10px}#replayStages button{flex:1;font-size:12px;padding:8px 2px}#replayRange{width:100%;accent-color:var(--mint)}.replay-controls{display:flex;gap:6px;align-items:center;margin:10px 0 20px}.replay-controls select{margin-left:auto;background:#11261a;color:var(--text);padding:8px}#replayProgress{font-size:11px;color:var(--muted);margin-left:auto}.replay-player{display:flex;gap:12px;align-items:center;border-bottom:1px solid var(--line);padding:10px 0;font-size:13px}.replay-player>span:first-child{flex:1}.replay-player .card{width:30px;height:42px;font-size:14px;padding:3px}.replay-player .card .suit{font-size:17px}.replay-player .bottom{display:none}.replay-player b{min-width:70px;text-align:right;color:var(--gold)}#replayTimeline{font-size:12px;line-height:1.8;padding-left:24px}#replayTimeline .current{color:var(--mint)}
+@media(min-width:1001px){.in-room .club-rail{display:flex;position:fixed;left:0;top:80px;bottom:0;width:64px;border-right:1px solid var(--line);flex-direction:column;align-items:center;gap:24px;padding-top:20px;background:#0e1511}.club-rail a{font-size:25px;color:var(--mint);text-decoration:none}.in-room .online-main{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:0;margin:0 0 0 64px;padding:0}.in-room .online-main>section{padding:16px 22px}.in-room .online-main aside{display:block;border-left:1px solid var(--line);background:#111c16;padding:16px}.in-room #tableSidebar>.panel:first-child,.in-room #journalPanel{display:none}.in-room.sidebar-open #tableSidebar>.panel:first-child,.in-room.sidebar-open #journalPanel{display:block}.in-room .online-table{height:440px;max-width:900px;margin:70px auto 60px;width:80%;border-width:9px}.in-room .online-seat{width:135px}.in-room .table-dock{max-width:none;margin:0 -22px -16px;border:0;border-top:1px solid var(--line);border-radius:0;padding:14px 20px;min-height:220px}.in-room .table-bar{margin-bottom:0}.in-room .phase-bar{margin-bottom:0}.in-room .online-center{top:39%}.in-room .large-table .online-table{height:600px}.in-room.large-table .online-table{height:640px}.in-room.large-table .online-seat{width:120px}}
+@media(max-width:760px){#replayDialog{padding:15px}.replay-felt .card{width:39px;height:55px;font-size:18px}.replay-felt .card .suit{font-size:22px}.replay-felt .card .bottom{display:none}.replay-controls{gap:3px}.replay-controls button{padding:7px;min-width:31px}.replay-player{gap:6px;font-size:11px}.replay-player b{min-width:45px}.replay-player .card{width:25px;height:35px}.replay-player .card .suit{font-size:14px}#potBreakdown{max-width:180px;font-size:8px;gap:3px}#potBreakdown span{padding:2px}.live-log ol{max-height:50vh}}
+@media(min-width:761px){.online-seat.you .hole-cards{display:flex;position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);height:auto}.online-seat.you .card{width:40px;height:55px;font-size:17px}.online-seat.you .card .suit{font-size:22px}.online-seat.you .bet-tag:not(:empty){top:-95px}}
