@@ -9,3 +9,4 @@ s=P.table();P.begin(s);let v=P.view(s);assert(!('players'in v));assert(!('deck'i
 s=P.table([100,3900]);P.begin(s);P.act(s,0,'raise',100);P.act(s,1,'call');assert(s.done);assert.equal(s.result.pot,200);assert.equal(s.players.reduce((a,p)=>a+p.stack,0),4000);
 // A royal flush on the board ties regardless of hole cards.
 s=P.table();P.begin(s);s.players[0].hole=[c(2,1),c(3,1)];s.players[1].hole=[c(4,2),c(5,2)];s.board=[10,11,12,13,14].map(r=>c(r));s.street=3;s.currentBet=0;s.turn=0;for(const p of s.players){p.bet=0;p.acted=false}P.act(s,0,'check');P.act(s,1,'check');assert.equal(s.result.winner,-1);assert.equal(s.players[0].stack,2000);assert.equal(s.players[1].stack,2000);console.log('PASS: unequal all-in pot and board tie');
+s=P.table();P.begin(s);P.act(s,0,'raise',2000);P.act(s,1,'fold');assert.equal(s.result.pot,40);assert.equal(s.players[0].stack,2020);assert.equal(s.players[0].total,20);console.log('PASS: fold refunds unmatched all-in bet');
