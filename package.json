@@ -1,0 +1,15 @@
+{
+  "name": "river-duel-ai",
+  "version": "0.0.2",
+  "private": true,
+  "scripts": {
+    "test": "node test.cjs && node multi-test.cjs",
+    "check:backend": "wrangler deploy --dry-run",
+    "deploy:backend": "wrangler deploy",
+    "dev:backend": "wrangler dev --local",
+    "test:rooms": "wrangler deploy --dry-run --outdir .room-test-dist && node room-test.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "4.147.0"
+  }
+}

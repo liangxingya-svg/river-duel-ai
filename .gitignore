@@ -1,0 +1,10 @@
+node_modules/
+backend/
+.wrangler/
+dist/
+.env
+.env.*
+.dev.vars
+*.log
+.room-test-dist/
+node_modules

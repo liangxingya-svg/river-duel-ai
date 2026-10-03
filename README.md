@@ -9,3 +9,15 @@ AI：蒙特卡洛抽样估算胜率，结合底池赔率、简化对手范围与
 浏览器打开 index.html 即可；推荐通过静态 HTTP 服务器运行以启用 Web Worker。无第三方运行依赖。浏览器保存已结算的筹码与累计战绩，未完成的手牌刷新后回到最近结算状态。
 
 验证：`node test.cjs` 检查牌型、行动顺序、合法加注、400 次随机对局筹码守恒与 AI 输入隔离。
+
+## 0.0.2 好友房（后端等待账号部署）
+
+`online.html` 是好友房入口：2—6 人，邀请链接、昵称、准备、房主发牌、AI 补位、30 秒行动时限、刷新重连、多边池结算。单机模式保留。
+
+后端使用 Cloudflare Workers + SQLite Durable Objects，适用于 Workers 免费方案。房间在 24 小时无牌局活动后到期。每桌独立持久化，WebSocket 使用休眠 API；空闲心跳自动应答。后端统一洗牌、验证下注和分池，隐藏未摊牌玩家的底牌。玩家凭证仅在创建响应或本人 WebSocket 返回，并留在本机存储；邀请链接不包含凭证。清除浏览器存储后无法恢复旧座位。
+
+部署：`npm install` → `npx wrangler login` → `npm run deploy:backend`。登录授权由账号持有人完成，不需要把凭证写入仓库。部署后把平台实际返回的 HTTPS Worker 地址写入 `online-config.js` 的 `RIVER_ONLINE_ENDPOINT` 并更新 GitHub Pages。配置空白时好友房明确显示尚未连接，并禁止开房。
+
+`wrangler.jsonc` 已使用免费方案所需的 `new_sqlite_classes` 迁移，允许来自当前 GitHub Pages 源的连接，不需要付费域名。不会自动切换到付费套餐。
+
+验证：`npm test`。多人引擎测试覆盖 1,500 次 2—6 人随机对局、筹码守恒、主池/边池、短全押不重开加注权和底牌隔离；另已在本地真实 Workers 运行时验证双客户端实时通信、AI 定时行动、同座位重连、相同结算与过期操作拒绝。
