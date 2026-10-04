@@ -199,3 +199,5 @@ body.in-room{--dock-height:calc(202px + env(safe-area-inset-bottom));font-family
  .in-room .online-seat.revealed[data-arc=upper][data-side=right] .hole-cards{top:auto;bottom:calc(100% + 5px);left:auto;right:0;transform:none}
  .in-room #potBreakdown{display:none}
 }
+
+.table-bubble{width:max-content}
