@@ -289,3 +289,4 @@
  .in-room .online-seat .seat-info{background:linear-gradient(150deg,#24382cf5,#14231cf5);box-shadow:0 3px 7px #0007,inset 0 1px 0 #e1f1d91a}
  .in-room .online-seat.empty-seat{background:#102b2070;border-color:#91ae7940;color:#9db19b}
 }
+@media(max-width:760px){.online-seat.you .bet-tag:not(:empty){left:calc(100% + 4px);right:auto;top:0;bottom:auto;transform:none}}
