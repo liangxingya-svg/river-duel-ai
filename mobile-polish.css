@@ -172,3 +172,19 @@ body.in-room{--dock-height:calc(202px + env(safe-area-inset-bottom));font-family
 @media(max-height:640px){.in-room .online-center .card{width:25px;height:35px;font-size:11px}.in-room .online-center .card .suit{font-size:19px}.in-room .my-summary .card{width:24px;height:34px}.in-room .online-seat.revealed .card,.in-room.showdown-hand .online-seat.you .card{width:20px;height:28px;font-size:9px}.in-room .online-seat.revealed .card .suit,.in-room.showdown-hand .online-seat.you .card .suit{font-size:14px}}
 .in-room.large-table .online-seat.revealed .card{width:14px;height:21px;font-size:7px}
 .in-room.large-table .online-seat.revealed .card .suit{font-size:11px}
+/* Every state uses the same dock border/padding and the same board anchor. */
+.in-room .table-dock,.in-room.large-table .table-dock,.in-room:not(.playing-hand) .table-dock{padding:7px 9px calc(6px + env(safe-area-inset-bottom));border-top:1px solid #66806c70;grid-template-rows:52px minmax(0,1fr)}
+.in-room .online-center{top:40%;transform:none}
+.in-room .online-center .board{margin:0}
+.in-room .online-center .pot{margin-top:8px}
+.in-room #mobileTableCaption{top:99px}
+.in-room .table-dock .action-panel{margin-top:3px}
+.in-room .action-heading{line-height:13px;margin-bottom:3px}
+.in-room .bet-control{grid-template-rows:25px 27px;gap:2px}
+.in-room .presets button{height:25px;min-height:25px;padding:3px 2px}
+.in-room .amount-stepper{height:27px}
+.in-room .amount-stepper button,.in-room .amount-stepper input{height:27px;min-height:27px;padding:3px}
+.in-room .bet-control input[type=range]{height:27px;min-height:27px;margin:0}
+.in-room .action-buttons{margin-top:5px}
+@media(max-height:640px){.in-room .online-center{top:35%}.in-room .online-center .pot{margin-top:6px}.in-room #mobileTableCaption{display:none}.in-room .bet-control{grid-template-rows:22px 23px;gap:2px}.in-room .presets button{height:22px;min-height:22px;padding:2px}.in-room .amount-stepper{height:23px}.in-room .amount-stepper button,.in-room .amount-stepper input,.in-room .bet-control input[type=range]{height:23px;min-height:23px;padding:2px}}
+@media(orientation:landscape) and (max-height:500px) and (min-width:761px){.in-room .table-dock,.in-room.large-table .table-dock,.in-room:not(.playing-hand) .table-dock{border-top:0}.in-room .online-center{top:35%}}
