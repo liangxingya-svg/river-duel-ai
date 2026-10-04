@@ -56,6 +56,6 @@
 @media(min-width:761px){.online-seat.you .hole-cards{display:flex;position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);height:auto}.online-seat.you .card{width:40px;height:55px;font-size:17px}.online-seat.you .card .suit{font-size:22px}.online-seat.you .bet-tag:not(:empty){top:-95px}}
 
 /* Keep the center summary above the bottom player cards. */
-@media(min-width:1001px){.in-room .online-center{top:30%}.in-room.large-table .online-center{top:39%}.online-center p{margin-top:6px}#potBreakdown{margin-block:6px}}
+@media(min-width:1001px){.in-room .online-center{top:22%}.in-room.large-table .online-center{top:39%}.online-center p{margin-top:6px}#potBreakdown{margin-block:6px}}
 
 .replay-controls button{flex:0 0 auto;min-width:36px;white-space:nowrap}#replayPlay{min-width:58px}.replay-controls select{width:86px;flex:0 0 86px;margin-left:0}
