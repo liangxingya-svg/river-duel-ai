@@ -206,3 +206,31 @@ body.in-room{--dock-height:calc(202px + env(safe-area-inset-bottom));font-family
 .in-room .action-buttons{margin-top:4px}
 .in-room #onlineActionNote{font-size:9px;line-height:11px;margin:2px 0 0}
 @media(max-height:640px){.in-room .action-heading{margin-bottom:1px}.in-room .action-buttons{margin-top:2px}}
+/* 0.0.14: remove inherited header min-height and button padding that shifted SVGs. */
+.in-room header{height:32px;min-height:32px;max-height:32px;padding:0;display:flex;align-items:center}
+.in-room header .top-actions,.in-room .social-tools{align-items:center}
+.in-room header .top-actions button,.in-room .social-tools button{padding:0;line-height:1;box-sizing:border-box}
+.in-room #quickMute:before{content:none}
+.in-room #tableVoice,.in-room #seatQuickChat{padding:0;min-width:0;box-sizing:border-box;line-height:1}
+.in-room .card:not(.back):not(.empty){overflow:hidden;justify-content:space-between}
+.in-room .card:not(.back):not(.empty)>span:first-child{display:block;flex:none;line-height:1;white-space:nowrap}
+.in-room .card:not(.back):not(.empty)>span:first-child small,.in-room .card .bottom{display:none}
+.in-room .card .suit{display:block;flex:none;margin:0;align-self:center;line-height:1}
+.in-room .my-summary .card .suit{font-size:19px}
+@media(max-height:640px){.in-room .my-summary .card .suit{font-size:17px}}
+#summaryDialog{width:calc(100vw - 24px);max-width:430px;max-height:80dvh;padding:14px 12px;border-radius:12px;background:#17271e}
+#summaryDialog .panel-head h2{font-size:15px;font-weight:650}
+.leaderboard-meta{font-size:10px;color:#9eb3a4;margin:8px 0 12px}
+.leaderboard-head{display:grid;grid-template-columns:minmax(0,1fr) 76px 58px;font-size:9px;color:#9aafa0;padding:0 6px 7px;border-bottom:1px solid #6a806346}
+.leaderboard-head span:not(:first-child){text-align:right}
+.leaderboard-row{display:grid;grid-template-columns:20px minmax(0,1fr) 76px 58px;align-items:center;gap:4px 3px;padding:9px 6px;border-bottom:1px solid #6a80632b}
+.leaderboard-row.is-you{background:#a9d2a30c}
+.leaderboard-rank{font-size:11px;color:#a2b4a5;font-variant-numeric:tabular-nums}
+.leaderboard-row:first-of-type .leaderboard-rank{color:#e2cb83}
+.leaderboard-name{font-size:11px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.leaderboard-name em{font-size:8px;font-style:normal;font-weight:400;color:#acd2b2;margin-left:2px}
+.leaderboard-row strong{font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
+.leaderboard-refills{font-size:10px;color:#b0c0b5;text-align:right}
+.leaderboard-row small{grid-column:2/-1;font-size:9px;line-height:14px;color:#93a89a}
+.leaderboard-rule{font-size:9px;line-height:15px;color:#8fa697;margin:12px 3px 0}
+.leaderboard-row .positive{color:#b9d6a2}.leaderboard-row .negative{color:#dba59a}.leaderboard-row .neutral{color:#a2b4a7}
