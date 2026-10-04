@@ -82,7 +82,7 @@
  .in-room .phase-bar .current:after{bottom:-8px}
  .in-room .online-table,.in-room.large-table .online-table,.in-room.table-focus .online-table{height:auto;min-height:0;flex:1;width:auto;margin:12px 16px 16px;border-width:5px;border-radius:50%}
  .in-room .online-table:after{inset:7px}
- .in-room .online-seat{left:var(--mobile-x);top:var(--mobile-y);width:86px}
+ .in-room .online-seat{left:var(--mobile-x)!important;top:var(--mobile-y)!important;width:86px}
  .in-room .online-seat .seat-info{grid-template-columns:1fr;gap:0;padding:4px 4px 0}
  .in-room .online-seat .avatar{display:none}
  .in-room .online-seat .seat-info b{display:block;font-size:9px;max-width:100%;white-space:nowrap}
