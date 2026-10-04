@@ -130,3 +130,21 @@ body.in-room{--dock-height:calc(202px + env(safe-area-inset-bottom));font-family
 .in-room.large-table .online-seat.revealed .seat-info>div{max-width:calc(100% - 30px)}
 @media(orientation:landscape) and (max-height:500px) and (min-width:761px){body.in-room{--dock-height:100%}.in-room .table-bar{padding-right:164px}.in-room .table-dock,.in-room.large-table .table-dock{grid-template-rows:52px minmax(0,1fr)}.in-room #onlineTable{inset:14px 25px 22px}.in-room header .top-actions button{display:grid}.in-room .my-summary{grid-row:1}.in-room .dock-body{grid-row:2}#chatDialog.chat-sheet{left:auto;right:0;width:300px;height:calc(100dvh - 12px);max-height:none;border-radius:10px 0 0 10px}.in-room .online-seat .seat-info{height:36px}.in-room .online-seat .seat-info b{font-size:7px}.in-room .online-seat .seat-info strong{font-size:10px}.in-room .online-seat .seat-status{height:10px;min-height:10px;margin-top:1px}}
 @media(prefers-reduced-motion:reduce){.table-bubble{animation:none}}
+
+.desktop-player-name{display:none}.mobile-player-name{display:inline}
+.in-room .social-tools #quickMute{font-size:0}
+.in-room #quickMute:before{content:'♪';font-size:19px;line-height:19px;color:#a2b9a9}
+.in-room #quickMute[aria-pressed=true]:before{content:'∅';font-size:19px;color:#718877}
+.quick-chat-dialog{position:fixed;inset:auto 0 0;width:100%;max-width:430px;margin:0 auto;padding:14px 12px calc(16px + env(safe-area-inset-bottom));border:1px solid #7b977868;border-bottom:0;border-radius:12px 12px 0 0;background:#16271d;box-sizing:border-box;color:#d3e5d7;overflow:auto;max-height:75dvh}
+.quick-chat-dialog:not([open]){display:none}.quick-chat-dialog::backdrop{background:#0004}
+.quick-chat-dialog .panel-head{margin-bottom:10px}.quick-chat-dialog h2{font-size:14px;font-weight:600;margin:0}.quick-chat-dialog .panel-head button{min-height:29px;height:29px;width:29px;padding:0;font-size:21px;border:0;background:none;color:#92aa9a}
+.quick-phrases{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.quick-phrases button{height:36px;min-height:36px;background:#1e3626;border:1px solid #84967342;font-size:11px;border-radius:5px;padding:5px;color:#cfdecf;text-align:left;padding-left:12px}
+.quick-emojis{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;border-top:1px solid #728c6542;padding-top:12px;margin-top:12px}
+.quick-emojis button{height:38px;min-height:38px;font-size:22px;background:#213829;border:1px solid #84967330;padding:4px;border-radius:5px}
+.online-seat.you{cursor:pointer}
+.seat-status{position:relative}
+.in-room .online-seat .seat-info .seat-chance{position:absolute;right:3px;top:0;display:block;max-width:none;font-size:8px;font-weight:650;line-height:12px;color:#cee8d6}
+.equity-track{position:absolute;left:0;bottom:0;height:2px;width:var(--equity);background:#a2c9ab;border-radius:1px}
+#mobileTableCaption{position:absolute;top:calc(100% + 12px);left:4px;right:4px;font-size:11px;line-height:15px;font-weight:650;color:#d5c07c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.showdown-hand #runoutStatus{font-size:11px;color:#bdd4c2;padding:15px 4px}
