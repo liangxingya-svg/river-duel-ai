@@ -379,3 +379,18 @@
  .in-room .online-main aside{display:none}.in-room.sidebar-open #tableSidebar{display:block;top:48px}
  .in-room .notice{position:fixed;left:10px;bottom:8px;z-index:10;max-width:40%;background:#11241fe8}
 }
+.dock-body{display:contents}
+@media(max-width:760px),(orientation:landscape) and (max-height:500px) and (max-width:1000px){
+ .in-room .table-dock,.in-room.large-table .table-dock{display:grid;grid-template-rows:30px 52px minmax(0,1fr);gap:4px;overflow:hidden}
+ .in-room .social-tools{grid-row:1;position:relative;top:auto;margin:0;padding:0;min-height:30px;max-height:30px}
+ .in-room .my-summary{grid-row:2;min-width:0;width:100%;height:52px;min-height:52px;box-sizing:border-box;margin:0;padding:0 0 6px;border-bottom:1px solid #405047}
+ .in-room .dock-body{grid-row:3;display:block;min-height:0;min-width:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-gutter:stable;scroll-padding-bottom:5px}
+ .in-room .action-heading{font-size:10px;line-height:14px;margin-bottom:3px}
+ .in-room #onlineActionNote{line-height:12px;margin:3px 0 0}
+ .in-room .table-dock .result-panel:not([hidden]){display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;row-gap:2px;padding:5px 0 0;margin-top:5px}
+ .in-room .table-dock .result-panel h2{grid-column:1;font-size:12px;margin:0}
+ .in-room .table-dock .result-panel p{grid-column:1;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ .in-room #openHandSummary{grid-column:2;grid-row:1/3;align-self:center;min-height:34px;font-size:10px;padding:4px 7px}
+ .in-room #showdownPreview{margin:0 0 4px}
+ .in-room #showdownPreview>summary{padding-block:4px}
+}
