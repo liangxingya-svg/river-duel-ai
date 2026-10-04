@@ -148,3 +148,27 @@ body.in-room{--dock-height:calc(202px + env(safe-area-inset-bottom));font-family
 .equity-track{position:absolute;left:0;bottom:0;height:2px;width:var(--equity);background:#a2c9ab;border-radius:1px}
 #mobileTableCaption{position:absolute;top:calc(100% + 12px);left:4px;right:4px;font-size:11px;line-height:15px;font-weight:650;color:#d5c07c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .showdown-hand #runoutStatus{font-size:11px;color:#bdd4c2;padding:15px 4px}
+/* Lower public hands sit above the outside seats, leaving the pot and winner text clear. */
+.in-room .online-seat.revealed[data-arc=lower][data-side=left] .hole-cards{top:auto;bottom:calc(100% + 7px);left:0;right:auto;transform:none}
+.in-room .online-seat.revealed[data-arc=lower][data-side=right] .hole-cards{top:auto;bottom:calc(100% + 7px);left:auto;right:0;transform:none}
+.table-bubble{max-width:116px;max-height:none;overflow:visible;font-size:10px;line-height:14px}
+.table-bubble.reaction{font-size:22px;line-height:26px;padding:4px 8px}
+@media(max-height:640px){.in-room .online-seat.revealed[data-arc=lower] .hole-cards{bottom:calc(100% + 5px)}}
+/* Final phone scale: quieter type and cards, with the same touch targets. */
+.in-room .table-bar h1{font-size:12px}
+.in-room .online-center .card{width:28px;height:40px;font-size:12px}
+.in-room .online-center .card .suit{font-size:21px}
+.in-room .online-center .pot b{font-size:17px}
+.in-room .my-summary .card{width:25px;height:36px;font-size:11px}
+.in-room .my-summary .card .suit{font-size:20px}
+.in-room .my-summary b{font-size:11px}
+.in-room .my-stack strong{font-size:16px;line-height:20px}
+.in-room .online-seat .seat-info strong{font-size:11px}
+.in-room .action-buttons button{font-size:11px}
+.in-room .online-seat.revealed .card,.in-room.showdown-hand .online-seat.you .card{width:22px;height:31px;font-size:9px}
+.in-room .online-seat.revealed .card .suit,.in-room.showdown-hand .online-seat.you .card .suit{font-size:16px}
+.in-room #mobileTableCaption{font-size:10px}
+.in-room .result-panel h2{font-size:11px}
+@media(max-height:640px){.in-room .online-center .card{width:25px;height:35px;font-size:11px}.in-room .online-center .card .suit{font-size:19px}.in-room .my-summary .card{width:24px;height:34px}.in-room .online-seat.revealed .card,.in-room.showdown-hand .online-seat.you .card{width:20px;height:28px;font-size:9px}.in-room .online-seat.revealed .card .suit,.in-room.showdown-hand .online-seat.you .card .suit{font-size:14px}}
+.in-room.large-table .online-seat.revealed .card{width:14px;height:21px;font-size:7px}
+.in-room.large-table .online-seat.revealed .card .suit{font-size:11px}
