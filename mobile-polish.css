@@ -188,3 +188,14 @@ body.in-room{--dock-height:calc(202px + env(safe-area-inset-bottom));font-family
 .in-room .action-buttons{margin-top:5px}
 @media(max-height:640px){.in-room .online-center{top:35%}.in-room .online-center .pot{margin-top:6px}.in-room #mobileTableCaption{display:none}.in-room .bet-control{grid-template-rows:22px 23px;gap:2px}.in-room .presets button{height:22px;min-height:22px;padding:2px}.in-room .amount-stepper{height:23px}.in-room .amount-stepper button,.in-room .amount-stepper input,.in-room .bet-control input[type=range]{height:23px;min-height:23px;padding:2px}}
 @media(orientation:landscape) and (max-height:500px) and (min-width:761px){.in-room .table-dock,.in-room.large-table .table-dock,.in-room:not(.playing-hand) .table-dock{border-top:0}.in-room .online-center{top:35%}}
+/* Keep every public hand clear of the shared board, including short screens. */
+.in-room .online-center .card,.in-room.large-table .online-center .card{width:28px;height:40px;font-size:12px}
+.in-room #mobileTableCaption{left:50%;right:auto;transform:translateX(-50%);width:max-content;max-width:160px}
+.in-room.large-table .online-seat.revealed[data-side=left] .hole-cards{left:2px!important;right:auto!important}
+.in-room.large-table .online-seat.revealed[data-side=left] .seat-info>div{margin-left:30px}
+@media(max-height:640px){
+ .in-room .online-center .card,.in-room.large-table .online-center .card{width:25px;height:35px;font-size:11px}
+ .in-room .online-seat.revealed[data-arc=upper][data-side=left] .hole-cards{top:auto;bottom:calc(100% + 5px);left:0;right:auto;transform:none}
+ .in-room .online-seat.revealed[data-arc=upper][data-side=right] .hole-cards{top:auto;bottom:calc(100% + 5px);left:auto;right:0;transform:none}
+ .in-room #potBreakdown{display:none}
+}
