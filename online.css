@@ -240,3 +240,17 @@
  .in-room .online-center .card,.in-room.large-table .online-center .card{width:24px;height:34px;font-size:12px}
  .in-room .online-center .card .suit{font-size:15px}
 }
+@media(max-width:760px){
+ .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-info{grid-template-columns:22px minmax(0,1fr);padding-top:3px}
+ .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .avatar{width:22px;height:22px;font-size:12px}
+ .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-info b{line-height:10px;font-size:8px}
+ .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-info strong{line-height:14px;font-size:12px}
+ .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-status{min-height:12px;line-height:10px;margin-top:2px;padding:1px 2px}
+}
+@media(max-width:760px) and (max-height:640px){
+ .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-info{grid-template-columns:19px minmax(0,1fr);padding-top:2px}
+ .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .avatar{width:19px;height:19px;font-size:10px}
+ .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-info b{line-height:9px;font-size:7px}
+ .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-info strong{line-height:12px;font-size:11px}
+ .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-status{min-height:10px;line-height:8px}
+}
