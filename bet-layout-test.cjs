@@ -1,0 +1,6 @@
+const assert=require('node:assert/strict'),{place,hit}=require('./bet-layout.js');
+// Actual 320x568 six-seat phone geometry: the original badge clips the top neighbour.
+const seats=[{left:121,top:255.984375,width:78,height:43},{left:36.671875,top:220.515625,width:78,height:42},{left:36.671875,top:135.328125,width:78,height:42},{left:121,top:106.921875,width:78,height:42},{left:205.3125,top:135.328125,width:78,height:42},{left:205.3125,top:220.515625,width:78,height:42}],bounds={left:28,top:101,width:264,height:205.3125};
+const initial={left:118.671875,top:147.328125,width:35,height:18};assert(hit(initial,seats[3]));const moved=place(initial,bounds,seats);assert(moved);assert(seats.every(s=>!hit(moved,s)));assert(Math.hypot(moved.left-initial.left,moved.top-initial.top)<=16,'keep chips near their owner');
+const occupied=[...seats,moved],second=place(initial,bounds,occupied);assert(second);assert(!hit(moved,second));const free={left:40,top:190,width:35,height:18};assert.deepEqual(place(free,bounds,seats),free);assert.equal(place({left:0,top:0,width:20,height:20},{left:0,top:0,width:20,height:20},[{left:0,top:0,width:20,height:20}]),null);
+console.log('PASS: measured phone neighbour collision, near-seat correction, multiple bets, stable free anchor and full occupancy');
