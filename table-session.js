@@ -6,7 +6,7 @@ function ensure(r){
  for(const s of r.stats){s.autoRefills=s.autoRefills||0;s.autoTopups=s.autoTopups||0}
  return r.stats;
 }
-function accumulate(r,g){for(let i=0;i<g.players.length;i++){const p=g.players[i],s=r.stats[i];if(!p.inHand||!s)continue;const net=(g.result.payouts[i]||0)-p.total;s.hands++;s.net+=net;if(net>0)s.wins++}}
+function accumulate(r,g){for(let i=0;i<g.players.length;i++){const p=g.players[i],s=r.stats[i];if(!p.inHand||!s)continue;const net=g.gameType==='doudizhu'?g.result.net[i]:(g.result.payouts[i]||0)-p.total;s.hands++;s.net+=net;if(g.gameType==='doudizhu'?g.result.winners.includes(i):net>0)s.wins++}}
 function record(r){ensure(r);const g=r.game;if(g?.done&&g.result&&g.hand>(r.statsLastHand||0)){accumulate(r,g);r.statsLastHand=g.hand}}
 function stack(r,i){return r.game?.players[i]?.stack??r.seats[i].balance??r.stack}
 function credit(r,i,amount){if(r.game?.players[i])r.game.players[i].stack+=amount;else r.seats[i].balance=stack(r,i)+amount;r.stats[i].topups+=amount;r.seats[i].sittingOut=false;r.seats[i].timeouts=0}

@@ -1,9 +1,10 @@
 (function(root){'use strict';
-function cues(previous,r){const g=r.game;if(!g)return [];const p=previous?.code===r.code&&previous.game?.hand===g.hand?previous.game:null,out=[];
+function cues(previous,r){const g=r.game;if(!g)return [];if(g.gameType==='doudizhu')return ddzCues(previous,r);const p=previous?.code===r.code&&previous.game?.hand===g.hand?previous.game:null,out=[];
  if(!p){if(!g.done&&g.street===0&&g.players.every(x=>x.total<=r.blind))out.push({kind:'deal',count:Math.min(10,g.players.filter(x=>x.inHand).length*2)});}
  else {const spent=g.players.filter((x,i)=>x.total>(p.players[i]?.total||0));if(spent.length)out.push({kind:spent.some(x=>x.stack===0)?'allin':'bet',count:Math.min(5,spent.length+1)});if(g.players.some((x,i)=>x.folded&&!p.players[i]?.folded))out.push({kind:'fold'});if(g.board.length>p.board.length)out.push({kind:'reveal',count:g.board.length-p.board.length});if(g.done&&!p.done)out.push({kind:g.result.payouts[r.seat]-(g.players[r.seat]?.total||0)>0?'win':'settle'});}
  if(!g.done&&!g.runout&&g.turn===r.seat&&(!p||p.turn!==g.turn||p.street!==g.street))out.push({kind:'turn'});return out;
 }
+function ddzCues(previous,r){const g=r.game,p=previous?.code===r.code&&previous.game?.hand===g.hand&&previous.game?.attempt===g.attempt?previous.game:null,out=[];if(!p)out.push({kind:'deal',count:8});else {for(const e of g.events.slice(p.events?.length||0)){if(e.kind==='play')out.push({kind:e.pattern==='炸弹'||e.pattern==='王炸'?'allin':'reveal',count:Math.min(e.cards.length,3)});else if(e.kind==='landlord')out.push({kind:'deal',count:3});else if(['rob','double','doubleReveal'].includes(e.kind))out.push({kind:'bet',count:2});}if(g.done&&!p.done)out.push({kind:g.result.net[r.seat]>0?'win':'settle'});}if(!g.done&&!g.runout&&g.turn===r.seat&&(!p||p.turn!==g.turn||p.phase!==g.phase))out.push({kind:'turn'});return out;}
 const api={cues};root.TableAudioCore=api;if(typeof module!=='undefined')module.exports=api;
 if(!root.document)return;
 const $=id=>document.getElementById(id);let prefs={effects:true,music:false,muted:false,style:'cinema',volume:.35};try{prefs={...prefs,...JSON.parse(localStorage.getItem('river-audio-v1')||'{}')}}catch{}prefs.volume=Math.max(0,Math.min(1,Number(prefs.volume)||0));if(!['cinema','jazz'].includes(prefs.style))prefs.style='cinema';
@@ -48,8 +49,8 @@ async function unlock(){
   await context.resume();unlocked=context.state==='running';update();startMusic();
  }catch{if($('audioStatus'))$('audioStatus').textContent='当前浏览器未能启用声音，可换浏览器或再次点击试听。'}
 }
-function observe(r){const list=cues(lastState,r);const g=r.game;lastState={code:r.code,game:g?{hand:g.hand,street:g.street,turn:g.turn,done:g.done,board:g.board.slice(),players:g.players.map(p=>({total:p.total,folded:p.folded,stack:p.stack}))}:null};youAct=!!r.game&&!r.game.done&&!r.game.runout&&r.game.turn===r.seat;if(list.some(e=>e.kind==='deal'))warnings.clear();update();list.forEach(e=>effect(e.kind,e.count));}
-function countdown(r,left){const g=r?.game;if(!g||g.done||g.runout||g.turn!==r.seat||left>3||left<=0)return;const key=[r.code,g.hand,g.street,g.players.map(p=>p.total).join(','),left].join(':');if(warnings.has(key))return;warnings.add(key);effect('tick');}
+function observe(r){const list=cues(lastState,r);const g=r.game;lastState={code:r.code,game:g?(g.gameType==='doudizhu'?structuredClone(g):{hand:g.hand,street:g.street,turn:g.turn,done:g.done,board:g.board.slice(),players:g.players.map(p=>({total:p.total,folded:p.folded,stack:p.stack}))}):null};youAct=!!r.game&&!r.game.done&&!r.game.runout&&r.game.turn===r.seat;if(list.some(e=>e.kind==='deal'))warnings.clear();update();list.forEach(e=>effect(e.kind,e.count));}
+function countdown(r,left){const g=r?.game;if(!g||g.done||g.runout||g.turn!==r.seat||left>3||left<=0)return;const key=[r.code,g.hand,g.phase||g.street,g.events?.length??g.players.map(p=>p.total).join(','),left].join(':');if(warnings.has(key))return;warnings.add(key);effect('tick');}
 function record(active){recording=active;if(active)stopMusic();update();if(!active)startMusic();}
 if($('tableSound'))$('tableSound').onclick=()=>{prefs.effects=!prefs.effects;save();return unlock().then(()=>{update();if(prefs.effects)effect('deal',3)})};
 if($('tableMusic'))$('tableMusic').onclick=()=>{prefs.music=!prefs.music;save();if(!prefs.music)stopMusic();return unlock().then(update)};
