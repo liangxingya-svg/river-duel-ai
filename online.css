@@ -290,3 +290,5 @@
  .in-room .online-seat.empty-seat{background:#102b2070;border-color:#91ae7940;color:#9db19b}
 }
 @media(max-width:760px){.online-seat.you .bet-tag:not(:empty){left:calc(100% + 4px);right:auto;top:0;bottom:auto;transform:none}}
+.social-tools #quickMute{flex:0 0 32px;padding:4px;font-size:15px}.audio-settings{display:grid;gap:8px;margin:16px 0;border-block:1px solid var(--line);padding:14px 0}.audio-settings label{font-size:12px;color:var(--muted)}.audio-settings select{font-size:13px}.audio-settings p{font-size:11px;line-height:1.6;color:var(--mint);margin:0}.in-room .table-bar h1{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.online-center .pot b{transition:color .2s}.online-seat.active .seat-timer{box-shadow:0 0 6px #a4d8b455}
+#chatUnread{display:inline-grid;place-items:center;background:#d1b773;color:#17251c;border-radius:8px;font-size:9px;min-width:14px;height:14px;margin-left:3px;padding:0 2px}
