@@ -1,0 +1,132 @@
+/* Mobile-only polish. Desktop remains governed by online.css. */
+:root{--mobile-line:#73877840;--mobile-muted:#98aaa0}
+.mobile-only{display:block}.ui-icon{display:block;width:18px;height:18px;flex:none}
+body.in-room{--dock-height:calc(202px + env(safe-area-inset-bottom));font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+.in-room button{border-color:var(--mobile-line);box-shadow:none;border-radius:6px}
+.in-room .table-bar{padding-right:164px;gap:7px}
+.in-room .table-bar h1{font-size:13px;font-weight:650;letter-spacing:0}
+.in-room .room-back{width:30px;height:34px;min-height:34px;font-size:25px;background:#19271f;border-radius:5px}
+.in-room header{right:7px;top:8px;height:32px}
+.in-room header .top-actions{gap:3px}
+.in-room header .top-actions button{width:30px;height:32px;min-height:32px;padding:5px;display:grid;place-items:center;color:#a9b8af}
+.in-room .tool-label{display:none}
+.in-room .social-tools{position:fixed;display:flex;top:8px;right:73px;width:95px;height:32px;min-height:32px;max-height:32px;gap:3px;z-index:9;background:none;overflow:visible}
+.in-room .social-tools button{width:30px;min-width:30px;height:32px;min-height:32px;flex:0 0 30px;padding:5px;display:grid;place-items:center;color:#a9b8af;background:#17251d}
+.in-room .social-tools #openTopup{display:none}
+.in-room .social-tools #quickMute{font-size:13px;flex:0 0 30px}
+#chatUnread{position:absolute;right:0;top:-3px;font-size:8px;min-width:12px;height:12px;margin:0}
+#chatUnread[hidden]{display:none}
+.in-room .room-strip{font-size:9px;color:#8c9f92}
+.in-room #invite{border:0;background:none;padding:3px 5px;color:#9fbdad;font-size:9px}
+.in-room .phase-bar{font-size:10px;color:#93a69a;border-color:#5c74613d;background:#16251b80;gap:16px}
+.in-room .phase-bar b{font-size:10px;font-variant-numeric:tabular-nums}
+.in-room #onlineTable{inset:34px 25px 30px;border-width:7px;box-shadow:inset 0 0 0 1px #8f9b81,inset 0 0 0 4px #11271b,0 0 0 1px #82927b,0 0 0 4px #1c2b20,0 10px 24px #0007}
+.in-room .online-table:after{inset:9px;border-color:#b9cd9e35}
+.in-room .felt-label{font-size:10px;letter-spacing:1px;top:32%;color:#adc3a32d;text-shadow:none}
+.in-room .online-center{top:44%;transform:translateY(-20%)}
+.in-room .online-center .card{width:31px;height:44px;padding:2px;font-size:13px;border:1px solid #b6b9a3;border-radius:3px;box-shadow:0 2px 0 #7f856e,0 3px 4px #0005}
+.in-room .online-center .card .suit{font-size:24px;line-height:1}
+.in-room .online-center .card.empty{border:1px dashed #75957c50;background:#0d302174;box-shadow:none}
+.in-room .online-center .card.winning{outline:1px solid #d6c880;box-shadow:0 0 8px #f1db6740,0 2px 0 #9b9468}
+.in-room .online-center .board{gap:3px}
+.in-room .online-center .pot{margin-top:8px;font-size:11px;color:#c7d9ca;gap:5px}
+.in-room .online-center .pot small{font-size:10px}
+.in-room .online-center .pot b{font-size:19px;font-weight:650;letter-spacing:0}
+.in-room .online-seat{width:89px}
+.in-room .online-seat .seat-info{height:46px;border:1px solid #7e938b8a;border-radius:5px;box-shadow:0 2px 5px #0004;background:#1c2924f2;grid-template-columns:23px minmax(0,1fr);gap:0 4px;padding:3px 4px 0}
+.in-room .online-seat .avatar{display:grid;width:23px;height:23px;font-size:11px;border-width:1px;box-shadow:0 0 0 2px #708b7050}
+.in-room .online-seat .seat-info b{font-size:8px;line-height:11px;max-width:100%;font-weight:550}
+.in-room .online-seat .seat-info strong{font-size:12px;line-height:15px;font-weight:650;letter-spacing:0;color:#dfcd91}
+.in-room .online-seat .seat-status{min-height:12px;height:13px;line-height:12px;padding:0 2px;margin:3px -4px 0;font-size:8px;background:#50605b68;color:#d5dfd9;border-radius:0 0 4px 4px}
+.in-room .online-seat.active .seat-info{border-color:#9bcaae;box-shadow:0 0 0 1px #7eb28e30}
+.in-room .online-seat.active .seat-status{background:#235741}
+.in-room .online-seat.winner .seat-status{background:#dac477;color:#203322}
+.in-room .online-seat.folded{opacity:.55}
+.in-room .online-seat.empty-seat{height:24px;width:66px;padding:5px 2px;border-radius:5px;font-size:8px;color:#849e8b;background:#16332355}
+.in-room .online-seat.revealed .hole-cards{display:flex!important;position:absolute;top:5px;left:calc(100% + 5px);right:auto;transform:none;margin:0;gap:3px;height:34px;z-index:4}
+.in-room .online-seat.revealed[data-side=right] .hole-cards{left:auto;right:calc(100% + 5px)}
+.in-room .online-seat.revealed[data-side=center] .hole-cards{top:calc(100% + 5px);left:50%;right:auto;transform:translateX(-50%)}
+.in-room .online-seat.you .hole-cards{display:none}
+.in-room.showdown-hand .online-seat.you .hole-cards{display:flex!important;position:absolute;top:auto;bottom:calc(100% + 5px);left:50%;transform:translateX(-50%);height:34px;margin:0;gap:3px}
+.in-room .online-seat.revealed .card,.in-room.showdown-hand .online-seat.you .card{width:24px;height:34px;padding:2px;font-size:10px;border:1px solid #c0c0a4;border-radius:3px;box-shadow:0 2px 0 #707962,0 3px 4px #0004}
+.in-room .online-seat.revealed .card .suit,.in-room.showdown-hand .online-seat.you .card .suit{font-size:17px}
+.in-room .online-seat .card small,.in-room .online-seat .card .bottom{display:none}
+.in-room .bet-tag:not(:empty){border-radius:5px;height:18px;font-size:9px;padding:1px 5px;border-color:#91ad7950;background:#102b20e6}
+.in-room .table-dock,.in-room.large-table .table-dock{grid-template-rows:52px minmax(0,1fr);padding:7px 9px calc(6px + env(safe-area-inset-bottom));gap:5px;background:#18271f;border-color:#66806c70;box-shadow:none}
+.in-room .my-summary{grid-row:1;padding-bottom:5px;gap:7px;border-color:#58705e55}
+.in-room .dock-body{grid-row:2}
+.in-room .my-summary .card{width:28px;height:40px;font-size:12px;padding:2px;border:1px solid #a9b299;border-radius:3px;box-shadow:0 2px 2px #0004}
+.in-room .my-summary .card .suit{font-size:23px;line-height:1}
+.in-room .my-summary b{font-size:12px;font-weight:650}
+.in-room .my-summary small{font-size:8px;font-weight:400;margin-bottom:2px;color:#94a89a}
+.in-room .my-stack strong{font-size:18px;line-height:21px;font-weight:650;color:#dec98b}
+.in-room .my-stack span{font-size:9px}
+#heroTopup{display:flex;align-items:center;justify-content:center;width:28px;height:32px;min-height:32px;padding:4px;gap:1px;color:#9cb7a5;border:0;background:none}
+#heroTopup .ui-icon{width:16px;height:16px}#heroTopup span{font-size:10px}
+.in-room .action-buttons{gap:5px;margin-top:6px}
+.in-room .action-buttons button{height:43px;min-height:43px;font-size:12px;border-radius:6px;padding:6px 3px;font-weight:600}
+.in-room .action-buttons .fold{background:#2a2520;border-color:#87625299;color:#cfad94}
+.in-room .action-buttons .call{background:#234450;border-color:#6e97a2aa;color:#d7e5e6}
+.in-room .action-buttons .raise{background:#b2cfa5;border-color:#a9c6a1;color:#233620}
+.in-room .presets button{font-size:10px;border-radius:5px;background:#1d3025;color:#b5c5b8;min-height:27px;padding:3px 2px}
+.in-room .amount-stepper button,.in-room .amount-stepper input{border-color:#6b866d60;font-size:12px;background:#14271a}
+.in-room .action-heading{font-size:10px;line-height:14px;color:#acd0b6}
+.in-room #onlineActionNote{font-size:8px;color:#8ea392}
+.in-room .room-controls button{height:34px;min-height:34px;font-size:10px;padding:5px 7px;border-radius:5px}
+.in-room .room-controls p{font-size:9px;line-height:1.45;margin-top:4px}
+.in-room #showdownPreview{display:none}
+.in-room #onlineResult{border-color:#58705e55}
+.in-room .result-panel h2{color:#dac88e;font-weight:650;font-size:12px}
+.in-room .result-panel p{font-size:9px;color:#a0b19f}
+#tableVoice,#seatQuickChat{position:absolute;bottom:4px;z-index:8;display:grid;place-items:center;color:#c0dcc5;background:radial-gradient(circle at 35% 25%,#295640,#173626);border:1px solid #819e8580;border-radius:50%;box-shadow:inset 0 0 0 2px #b3cbb51c,0 2px 5px #0005}
+#tableVoice{right:1px;width:35px;height:35px;min-height:35px}#tableVoice .ui-icon{width:19px;height:19px}
+#seatQuickChat{left:2px;width:30px;height:30px;min-height:30px;bottom:6px}#seatQuickChat .ui-icon{width:17px;height:17px}
+#tableBubbles{position:absolute;inset:0;pointer-events:none;z-index:10}
+.table-bubble{position:absolute;transform:translate(-50%,-100%);max-width:100px;min-width:30px;max-height:50px;overflow:hidden;white-space:pre-wrap;overflow-wrap:anywhere;text-align:center;padding:6px 8px;border-radius:7px;background:#b9d4bd;color:#243c2c;font-size:11px;line-height:15px;box-shadow:0 2px 7px #0005;animation:bubble-in .16s ease-out}
+.table-bubble:after{content:'';position:absolute;left:45%;bottom:-5px;border:5px solid transparent;border-top-color:#b9d4bd;border-bottom:0}
+@keyframes bubble-in{from{opacity:0;transform:translate(-50%,-85%)}to{opacity:1;transform:translate(-50%,-100%)}}
+/* A compact bottom sheet, with a fixed composer and a scrollable conversation. */
+#chatDialog.chat-sheet{position:fixed;inset:auto 0 0;margin:0 auto;width:100%;max-width:520px;height:min(440px,72dvh);max-height:calc(100dvh - 60px);padding:13px 12px calc(10px + env(safe-area-inset-bottom));border:1px solid #78908066;border-bottom:0;border-radius:13px 13px 0 0;background:#16251d;color:#dbe7de;box-shadow:0 -10px 45px #0006;overflow:hidden;box-sizing:border-box}
+#chatDialog[open]{display:flex;flex-direction:column;gap:7px}
+#chatDialog::backdrop{background:#0005;backdrop-filter:none}
+#chatDialog .panel-head{flex:none;margin:0;min-height:26px;border:0;padding:0}
+#chatDialog h2{font-size:14px;font-weight:650}
+#chatDialog .panel-head button{min-height:29px;height:29px;width:29px;padding:0;border:0;background:none;font-size:21px;color:#91a99c}
+#chatHint{font-size:10px;line-height:14px;margin:0;color:#7f9989}
+#chatMessages{flex:1;min-height:50px;height:auto;border:0;padding:2px 0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
+#chatMessages:empty:before{content:'说点什么，牌桌会更热闹';display:block;text-align:center;font-size:11px;color:#7e9885;padding:24px 0}
+#chatMessages .chat-message{width:max-content;max-width:84%;background:none;padding:0;margin:8px 0 10px;border-radius:0}
+#chatMessages .chat-message small{font-size:9px;color:#88a48f;line-height:13px;margin:0 0 3px}
+#chatMessages .chat-message p{font-size:12px;line-height:17px;padding:8px 10px;margin:0;background:#2a4032;border:1px solid #74886b35;border-radius:2px 9px 9px 9px;color:#d6e4d9;white-space:pre-wrap;overflow-wrap:anywhere}
+#chatMessages .chat-message.mine{margin-left:auto}
+#chatMessages .chat-message.mine small{text-align:right}
+#chatMessages .chat-message.mine p{background:#a4c7aa;color:#1e3525;border-color:#b0d0b4;border-radius:9px 2px 9px 9px}
+#chatMessages audio{height:34px;max-width:240px;margin-top:3px}
+#quickChat{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;flex:none;padding:7px 0 0;border-top:1px solid #53695455}
+#quickChat button{min-height:29px;height:29px;padding:2px;font-size:17px;background:#21362a;border:1px solid #6d89652e;border-radius:5px;color:#c7dbcb}
+#quickChat button:nth-child(n+9){grid-column:span 2;font-size:10px;height:26px;min-height:26px;letter-spacing:0}
+#chatForm{display:grid;grid-template-columns:minmax(0,1fr) 47px;gap:6px;margin:0;flex:none}
+#chatForm label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+#chatText{height:34px;min-height:34px;padding:6px 9px;font-size:16px;line-height:20px;border:1px solid #738c6e55;border-radius:5px;background:#0f2417;color:#d9e8dc}
+#sendChat{height:34px;min-height:34px;padding:4px;font-size:11px;background:#a7caae;color:#1b3924;border-radius:5px}
+#sendChat:disabled{opacity:.4}
+#chatCount{display:none}
+#recordVoice{flex:none;min-height:32px;height:32px;font-size:11px;padding:5px;background:#213c2c;border:1px solid #75996c5c;border-radius:5px;color:#bdd0c0}
+#recordVoice.recording{background:#713a36;border-color:#cc8176;color:#ffe4d9}
+#featureNotice{margin:0;font-size:10px;line-height:13px;min-height:0;flex:none}
+#featureNotice:empty{display:none}
+#voicePreview{flex:none;padding:6px;background:#20392a;border-radius:7px}
+#voicePreview audio{height:34px}
+#voicePreview button{font-size:10px;min-height:29px;padding:4px 9px}
+.feature-dialog{font-size:12px;padding:13px;border-radius:9px;max-height:80dvh}
+.feature-dialog h2{font-size:15px}.feature-dialog p{font-size:11px;line-height:1.6}.summary-player{padding:9px 0;gap:4px}.summary-player b,.summary-player strong{font-size:12px}.summary-player small{font-size:10px}
+@media(max-height:640px){body.in-room{--dock-height:calc(188px + env(safe-area-inset-bottom))}.in-room #onlineTable{inset:24px 19px 26px}.in-room .online-seat .seat-info{height:40px}.in-room .online-seat{width:78px}.in-room .online-seat .avatar{width:20px;height:20px}.in-room .online-seat .seat-status{height:11px;min-height:11px;font-size:7px;margin-top:1px}.in-room .online-seat .seat-info b{font-size:7px;line-height:10px}.in-room .online-seat .seat-info strong{font-size:11px;line-height:13px}.in-room .online-center .card{width:27px;height:38px;font-size:12px}.in-room .online-center .card .suit{font-size:21px}.in-room .action-buttons button{height:40px;min-height:40px}.in-room .online-seat.revealed .hole-cards{gap:2px}.in-room .online-seat.revealed .card,.in-room.showdown-hand .online-seat.you .card{width:21px;height:29px;font-size:9px}.in-room .online-seat.revealed .card .suit,.in-room.showdown-hand .online-seat.you .card .suit{font-size:15px}}
+/* Dense tables keep public cards inside each fixed seat footprint. */
+.in-room.large-table .online-seat.revealed .hole-cards{left:auto!important;right:2px!important;top:3px!important;bottom:auto!important;transform:none!important;height:22px;margin:0;gap:1px}
+.in-room.large-table .online-seat.revealed .card{width:14px;height:21px;font-size:7px;padding:1px;box-shadow:0 1px 1px #0004}
+.in-room.large-table .online-seat.revealed .card .suit{font-size:11px}
+.in-room.large-table .online-seat.revealed .seat-info{grid-template-columns:1fr}
+.in-room.large-table .online-seat.revealed .avatar{display:none}
+.in-room.large-table .online-seat.revealed .seat-info>div{max-width:calc(100% - 30px)}
+@media(orientation:landscape) and (max-height:500px) and (min-width:761px){body.in-room{--dock-height:100%}.in-room .table-bar{padding-right:164px}.in-room .table-dock,.in-room.large-table .table-dock{grid-template-rows:52px minmax(0,1fr)}.in-room #onlineTable{inset:14px 25px 22px}.in-room header .top-actions button{display:grid}.in-room .my-summary{grid-row:1}.in-room .dock-body{grid-row:2}#chatDialog.chat-sheet{left:auto;right:0;width:300px;height:calc(100dvh - 12px);max-height:none;border-radius:10px 0 0 10px}.in-room .online-seat .seat-info{height:36px}.in-room .online-seat .seat-info b{font-size:7px}.in-room .online-seat .seat-info strong{font-size:10px}.in-room .online-seat .seat-status{height:10px;min-height:10px;margin-top:1px}}
+@media(prefers-reduced-motion:reduce){.table-bubble{animation:none}}
