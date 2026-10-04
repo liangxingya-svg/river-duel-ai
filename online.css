@@ -159,3 +159,6 @@
  .in-room .table-dock .room-controls p{display:none}
  .sidebar-open #tableSidebar{top:40px}
 }
+
+@media(max-width:760px){.in-room .online-seat .bet-tag:empty{display:none}.in-room .online-seat .dealer{font-size:7px;line-height:10px;padding:0 2px}.in-room .table-dock{min-height:210px}}
+@media(max-width:760px) and (max-height:640px){.in-room .table-dock{min-height:195px}}
