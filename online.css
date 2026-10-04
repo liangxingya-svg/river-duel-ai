@@ -394,3 +394,15 @@
  .in-room #showdownPreview{margin:0 0 4px}
  .in-room #showdownPreview>summary{padding-block:4px}
 }
+
+@media(max-width:760px) and (max-height:640px){
+ .in-room .bet-control{grid-template-rows:23px 25px;gap:2px}
+ .in-room .presets button{height:23px;min-height:23px;padding:2px;font-size:9px}
+ .in-room .bet-control input[type=range]{height:25px;min-height:25px;margin:0}
+ .in-room .amount-stepper{height:25px}
+ .in-room .amount-stepper button,.in-room .amount-stepper input{height:25px;min-height:25px;padding:2px}
+}
+@media(orientation:landscape) and (max-height:500px) and (max-width:1000px){
+ .in-room .room-back{display:grid;width:34px;height:34px;min-height:34px;place-items:center}
+ .in-room .table-bar{gap:8px;justify-content:flex-start}
+}
