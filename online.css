@@ -254,3 +254,4 @@
  .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-info strong{line-height:12px;font-size:11px}
  .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-status{min-height:10px;line-height:8px}
 }
+@media(max-width:760px) and (max-height:640px){.in-room .online-table,.in-room.large-table .online-table{margin-block:12px 14px}}
