@@ -59,3 +59,81 @@
 @media(min-width:1001px){.in-room .online-center{top:22%}.in-room.large-table .online-center{top:39%}.online-center p{margin-top:6px}#potBreakdown{margin-block:6px}}
 
 .replay-controls button{flex:0 0 auto;min-width:36px;white-space:nowrap}#replayPlay{min-width:58px}.replay-controls select{width:86px;flex:0 0 86px;margin-left:0}
+
+/* 0.0.6: fit the mobile table and actions in the available browser viewport. */
+@media(max-width:760px){
+ body.in-room{height:100dvh;min-height:0;display:flex;flex-direction:column;overflow:hidden}
+ .in-room header{height:46px;min-height:46px;flex:none;padding-inline:8px}
+ .in-room header .brand{font-size:11px;gap:5px}
+ .in-room header .brand-icon{width:26px;height:26px;font-size:18px}
+ .in-room header .top-actions{gap:3px}
+ .in-room header .top-actions button,.in-room header .nav-button{font-size:10px;padding:5px 7px;min-height:32px}
+ .in-room header .top-actions .nav-button:last-child{display:none}
+ .in-room .online-main{display:flex;flex:1;min-height:0;width:100%;padding:0 8px;margin:0;max-width:none}
+ .in-room .online-main>section{display:flex;flex-direction:column;flex:1;min-height:0;min-width:0}
+ .in-room .table-bar{flex:none;min-height:28px;margin:4px 0 0}
+ .in-room .table-bar h1{font-size:13px;margin:0}
+ .in-room .hand-no{font-size:9px;padding:3px 6px}
+ .in-room #roomArea:not([hidden]){display:flex;flex-direction:column;flex:1;min-height:0}
+ .in-room .room-strip{flex:none;margin:2px 0;gap:4px;font-size:9px;min-height:26px}
+ .in-room .room-strip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ .in-room .room-strip button{font-size:9px;padding:4px 6px;min-height:26px}
+ .in-room .phase-bar{flex:none;margin:2px -8px 0;padding:7px 8px;gap:14px;font-size:10px}
+ .in-room .phase-bar .current:after{bottom:-8px}
+ .in-room .online-table,.in-room.large-table .online-table,.in-room.table-focus .online-table{height:auto;min-height:0;flex:1;width:auto;margin:12px 16px 16px;border-width:5px;border-radius:50%}
+ .in-room .online-table:after{inset:7px}
+ .in-room .online-seat{left:var(--mobile-x);top:var(--mobile-y);width:86px}
+ .in-room .online-seat .seat-info{grid-template-columns:1fr;gap:0;padding:4px 4px 0}
+ .in-room .online-seat .avatar{display:none}
+ .in-room .online-seat .seat-info b{display:block;font-size:9px;max-width:100%;white-space:nowrap}
+ .in-room .online-seat .seat-info strong{font-size:13px;margin:0;line-height:1.25}
+ .in-room .online-seat .seat-status{margin:3px -4px 0;padding:2px;font-size:9px;min-height:16px;line-height:12px}
+ .in-room .online-seat.empty-seat{width:76px;padding:6px 3px;font-size:9px;line-height:13px}
+ .in-room.large-table .online-seat{width:clamp(54px,17vw,68px)}
+ .in-room.large-table .online-seat.empty-seat{width:54px;padding:5px 2px;white-space:nowrap}
+ .in-room.large-table .online-seat .seat-info b{font-size:8px;max-width:100%}
+ .in-room.large-table .online-seat .seat-info strong{font-size:12px}
+ .in-room.large-table .online-seat .seat-status{font-size:8px;min-height:14px;line-height:10px;margin-top:2px}
+ .in-room .online-seat .bet-tag:not(:empty){font-size:8px;padding:2px 3px;bottom:-16px}
+ .in-room.large-table .online-seat[data-side=left] .bet-tag:not(:empty){top:50%;bottom:auto;left:calc(100% + 2px);transform:translateY(-50%)}
+ .in-room.large-table .online-seat[data-side=right] .bet-tag:not(:empty){top:50%;bottom:auto;left:auto;right:calc(100% + 2px);transform:translateY(-50%)}
+ .in-room .online-center{top:43%;transform:translateY(-30%)}
+ .in-room .online-center .board{gap:2px;margin-top:0}
+ .in-room .online-center .card{width:30px;height:42px;font-size:14px;padding:3px}
+ .in-room.large-table .online-center .card{width:clamp(20px,6vw,26px);height:35px;font-size:12px;padding:2px}
+ .in-room .online-center .card .suit{font-size:16px}
+ .in-room .online-center .pot{margin-top:5px}
+ .in-room .online-center .pot b{font-size:19px}
+ .in-room #potBreakdown{max-width:150px;margin-block:4px;max-height:32px;overflow:auto;font-size:8px}
+ .in-room .table-dock,.in-room.large-table .table-dock{position:relative;bottom:auto;flex:none;margin:0 -8px;border-radius:0;padding:7px 8px calc(7px + env(safe-area-inset-bottom));max-height:48dvh;overflow:auto}
+ .in-room .my-summary{gap:7px;padding-bottom:5px}
+ .in-room .my-summary .card{width:28px;height:39px;font-size:13px;padding:2px}
+ .in-room .my-summary .card .suit{font-size:15px}
+ .in-room .my-summary small{font-size:9px;margin-bottom:2px}
+ .in-room .my-summary b{font-size:12px}
+ .in-room .my-stack strong{font-size:17px}
+ .in-room .my-stack span{font-size:9px}
+ .in-room .table-dock .room-controls{padding-top:6px;gap:4px}
+ .in-room .room-controls button{min-height:38px;font-size:11px;padding:6px 8px;flex:1;white-space:nowrap}
+ .in-room .room-controls p{margin:2px 0 0;line-height:1.3;font-size:9px}
+ .in-room .table-dock .action-panel{margin-top:5px}
+ .in-room .action-heading{font-size:10px;margin-bottom:3px}
+ .in-room .bet-control{gap:3px;grid-template-columns:1fr 118px}
+ .in-room .presets button{min-height:28px;padding:4px 2px;font-size:10px}
+ .in-room .amount-stepper button{min-height:30px;min-width:28px;padding:3px}
+ .in-room .amount-stepper input{padding:3px 1px;font-size:12px}
+ .in-room input[type=range]{min-height:28px}
+ .in-room .action-buttons{margin-top:5px;gap:4px}
+ .in-room .action-buttons button{min-height:42px;padding:7px 3px;font-size:12px}
+ .in-room .action-note{font-size:9px;margin:3px 0 0;line-height:1.2}
+ .in-room #preActions{padding-top:6px;gap:5px}
+ .in-room #preActions button{min-height:38px;font-size:11px}
+ .in-room .table-dock .result-panel{padding:5px 0 0}
+ .in-room .table-dock .result-panel h2{font-size:13px;margin:3px 0}
+ .in-room .table-dock .result-panel p{font-size:9px;margin:2px 0;line-height:1.3}
+ .in-room .notice{flex:none;max-height:25px;overflow:auto;font-size:9px;line-height:1.3;margin:3px 0}
+ .in-room .online-main aside{display:none}
+ .in-room.sidebar-open #tableSidebar{display:block}
+ .sidebar-open #tableSidebar{top:46px}
+ #closeSidebar{top:53px}
+}
