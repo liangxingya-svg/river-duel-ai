@@ -234,3 +234,13 @@ body.in-room{--dock-height:calc(202px + env(safe-area-inset-bottom));font-family
 .leaderboard-row small{grid-column:2/-1;font-size:9px;line-height:14px;color:#93a89a}
 .leaderboard-rule{font-size:9px;line-height:15px;color:#8fa697;margin:12px 3px 0}
 .leaderboard-row .positive{color:#b9d6a2}.leaderboard-row .negative{color:#dba59a}.leaderboard-row .neutral{color:#a2b4a7}
+/* Match the recording's compact conversation panel and avatar-backed bubbles. */
+@media(orientation:portrait){#chatDialog.chat-sheet{inset:0;margin:auto;width:calc(100% - 28px);max-width:380px;height:min(410px,76dvh);max-height:calc(100dvh - 32px);padding:12px;border:1px solid #78908066;border-radius:10px;box-shadow:0 12px 45px #0007}#chatDialog::backdrop{background:#0007;backdrop-filter:blur(3px)}}
+#chatMessages .chat-message{position:relative;padding-left:32px;max-width:88%;box-sizing:border-box}
+#chatMessages .chat-message:before{content:attr(data-avatar);position:absolute;left:0;top:18px;width:25px;height:25px;display:grid;place-items:center;border-radius:50%;font-size:10px;color:#d8e7db;background:#486752;border:1px solid #879e8280;box-sizing:border-box}
+#chatMessages .chat-message.mine{padding-left:0;padding-right:32px}
+#chatMessages .chat-message.mine:before{left:auto;right:0;background:#6a6247;border-color:#c0b58a80}
+#chatMessages .chat-message.mine p{background:#2b5140;color:#d8e6dc;border-color:#719d8160}
+#chatMessages .chat-message.mine p:after{content:'✓';font-size:9px;color:#a2c2ac;margin-left:7px}
+#chatMessages .chat-message.emoji-message p{font-size:26px;line-height:32px;padding:7px 10px}
+#chatMessages .chat-message.emoji-message p:after{font-size:9px;vertical-align:bottom}
