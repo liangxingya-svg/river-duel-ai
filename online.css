@@ -137,3 +137,25 @@
  .sidebar-open #tableSidebar{top:46px}
  #closeSidebar{top:53px}
 }
+@media(max-width:760px){
+ .in-room.large-table .online-seat .seat-info b{line-height:1.15}
+ .in-room.large-table .online-seat .seat-info strong{line-height:1.1}
+ .in-room.large-table .online-seat .seat-status{line-height:9px;min-height:11px;padding:1px;margin-top:2px}
+ .in-room .my-summary,.in-room .my-stack{line-height:1.2}
+ .in-room .my-stack span{display:block}
+}
+@media(max-width:760px) and (max-height:640px){
+ .in-room header{height:40px;min-height:40px}
+ .in-room .table-bar,.in-room .notice{display:none}
+ .in-room .room-strip{min-height:22px}
+ .in-room .room-strip button{min-height:22px;padding-block:2px}
+ .in-room .phase-bar{padding-block:6px}
+ .in-room .online-table,.in-room.large-table .online-table{margin-block:10px 12px}
+ .in-room .my-stack small,.in-room .my-stack span{display:none}
+ .in-room .my-stack strong{font-size:16px}
+ .in-room .my-summary .card{width:25px;height:35px}
+ .in-room .my-summary small{display:none}
+ .in-room .action-buttons button{min-height:38px}
+ .in-room .table-dock .room-controls p{display:none}
+ .sidebar-open #tableSidebar{top:40px}
+}
