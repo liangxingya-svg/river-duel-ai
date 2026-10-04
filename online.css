@@ -255,3 +255,17 @@
  .in-room .online-table:is([data-capacity="11"],[data-capacity="12"]) .seat-status{min-height:10px;line-height:8px}
 }
 @media(max-width:760px) and (max-height:640px){.in-room .online-table,.in-room.large-table .online-table{margin-block:12px 14px}}
+.runout-status{padding:16px 4px;text-align:center;color:var(--gold);font-size:13px;line-height:1.8}
+.online-seat.revealed .hole-cards{display:flex;position:absolute;top:100%;left:50%;transform:translateX(-50%);z-index:4;gap:3px;height:auto;margin:4px 0}
+.online-seat.revealed .card{width:28px;height:39px;font-size:13px;padding:3px;border:1px solid #aaae95;box-shadow:0 2px 4px #0005}
+.online-seat.revealed .card .suit{font-size:17px}
+@media(max-width:760px){
+ .in-room .online-seat.revealed .hole-cards{display:flex;top:2px;left:calc(100% + 4px);transform:none;margin:0}
+ .in-room .online-seat.revealed[data-side=right] .hole-cards{left:auto;right:calc(100% + 4px)}
+ .in-room .online-seat.revealed[data-side=center] .hole-cards{top:100%;left:50%;transform:translateX(-50%);margin-top:3px}
+ .in-room .online-seat.revealed .card{width:21px;height:29px;font-size:10px;padding:2px;border-radius:3px}
+ .in-room .online-seat.revealed .card .suit{font-size:13px}
+ .in-room .online-seat.revealed .bet-tag{display:none}
+ .in-room.showdown-hand .online-center .board{position:relative;z-index:5}
+ .in-room .runout-status{font-size:12px;padding-block:20px}
+}
