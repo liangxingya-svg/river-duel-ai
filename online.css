@@ -162,3 +162,81 @@
 
 @media(max-width:760px){.in-room .online-seat .bet-tag:empty{display:none}.in-room .online-seat .dealer{font-size:7px;line-height:10px;padding:0 2px}.in-room .table-dock{min-height:210px}}
 @media(max-width:760px) and (max-height:640px){.in-room .table-dock{min-height:195px}}
+/* 0.0.7: club table finish and compact room toolbar */
+.room-back{display:none}
+.online-table{background:radial-gradient(ellipse at 50% 42%,#245a40,#16412d 65%,#113425);border-color:#485548;box-shadow:inset 0 0 0 2px #758371,0 0 0 2px #17291f,0 12px 35px #0005}
+.online-table:before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background-image:radial-gradient(#afd5b512 .7px,transparent .8px);background-size:4px 4px;box-shadow:inset 0 0 45px #071e1744}
+.online-table:after{border-color:#8bba9760;box-shadow:inset 0 0 0 18px #244d351c}
+.felt-label{color:#a2c4ac55;letter-spacing:1px}
+@media(max-width:760px){
+ body.in-room{background:#0d1913}
+ .in-room header{position:absolute;top:6px;right:8px;width:auto;height:34px;padding:0;border:0;z-index:8;background:none}
+ .in-room header .brand,.in-room header .nav-button{display:none}
+ .in-room header .top-actions{gap:3px}
+ .in-room header button{height:34px;min-height:34px;padding:6px 8px;color:#b7c4ba;border-color:#405047;background:#19241f;border-radius:6px}
+ .in-room .online-main{padding-inline:8px;margin-top:0}
+ .in-room .table-bar{display:flex;justify-content:flex-start;gap:8px;min-height:43px;margin:0;padding-right:88px}
+ .in-room .table-bar>div{min-width:0}
+ .in-room .table-bar h1{font-size:13px;line-height:19px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .in-room .room-back{display:grid;place-items:center;text-decoration:none;color:#b7c4ba;width:29px;height:32px;border:1px solid #405047;border-radius:5px;background:#19241f;font-size:27px;flex:none}
+ .in-room #connection{display:none}
+ .in-room .room-strip{margin:0;min-height:25px;padding:0 0 5px 37px;gap:5px;font-size:9px}
+ .in-room .room-strip button{min-height:24px;padding:3px 7px;font-size:9px;border-radius:5px}
+ .in-room .phase-bar{margin-top:0;background:#15231b;border-color:#334338;padding:7px 8px;font-size:10px}
+ .in-room .phase-bar b{color:#aebbb1}
+ .in-room .online-table,.in-room.large-table .online-table{margin:39px 23px 30px;border-width:7px}
+ .in-room .online-table:after{inset:10px}
+ .in-room .felt-label{top:35%;font-size:11px;color:#a2c4ac55}
+ .in-room .online-center{top:47%;transform:translateY(-25%)}
+ .in-room .online-center .board{margin-top:6px;gap:2px}
+ .in-room .online-center .card,.in-room.large-table .online-center .card{width:clamp(25px,7.7vw,34px);height:45px;font-size:15px;padding:3px;border-radius:4px}
+ .in-room .online-center .card .suit{font-size:20px}
+ .in-room .online-center .pot{margin-top:6px;font-size:11px}
+ .in-room .online-center .pot b{font-size:20px}
+ .in-room .online-center p{max-width:140px;margin-top:8px;color:#bdcec1;font-size:9px}
+ .in-room .online-seat,.in-room.large-table .online-seat{width:92px}
+ .in-room .online-seat .seat-info,.in-room.large-table .online-seat .seat-info{grid-template-columns:26px minmax(0,1fr);gap:0 4px;padding:4px 4px 0;border:1px solid #68776e;border-radius:6px;background:#1b2521f5;box-shadow:0 2px 5px #0004}
+ .in-room .online-seat .avatar,.in-room.large-table .online-seat .avatar{display:grid;grid-row:1;place-items:center;width:26px;height:26px;font-size:13px;border-width:2px;box-shadow:0 0 0 1px #112019;line-height:1}
+ .in-room .online-seat .seat-info b,.in-room.large-table .online-seat .seat-info b{font-size:9px;line-height:12px;max-width:100%;color:#dce4db}
+ .in-room .online-seat .seat-info strong,.in-room.large-table .online-seat .seat-info strong{font-size:13px;line-height:16px;color:#edd596;margin:0}
+ .in-room .online-seat .seat-status,.in-room.large-table .online-seat .seat-status{display:block;grid-column:1/-1;background:#3c4946;color:#eff2ed;margin:3px -4px 0;padding:2px 3px;min-height:15px;font-size:8px;line-height:11px}
+ .in-room .online-seat.folded{opacity:1}
+ .in-room .online-seat.folded .seat-status{background:#404947}
+ .in-room .online-seat.you .seat-info{background:#202d25}
+ .in-room .online-seat.active .seat-info{border-color:#9dceb2;box-shadow:0 0 0 2px #8acba330}
+ .in-room .online-seat.winner .seat-info{border-color:#eed596}
+ .in-room .online-seat.winner .seat-status{background:#ddc77e;color:#273325}
+ .in-room .online-seat.empty-seat,.in-room.large-table .online-seat.empty-seat{width:72px;height:36px;display:grid;place-items:center;border:1px dashed #7eaa8855;border-radius:6px;background:#162e2377;color:#96b5a0;padding:3px;font-size:9px;line-height:12px}
+ .in-room .online-seat .bet-tag:not(:empty){border:0;background:#0e271ee8;color:#ddcb8c;font-size:8px;line-height:11px;padding:2px 4px;border-radius:10px}
+ .in-room .table-dock,.in-room.large-table .table-dock{background:#18251e;border-top:2px solid #50624f;box-shadow:0 -3px 15px #05100b44;padding:8px 9px calc(9px + env(safe-area-inset-bottom));min-height:190px}
+ .in-room:not(.playing-hand) .table-dock{min-height:0}
+ .in-room .my-summary{padding-bottom:8px;gap:8px}
+ .in-room .my-summary .card{width:33px;height:45px;font-size:15px}
+ .in-room .my-summary .card .suit{font-size:21px}
+ .in-room .my-summary b{font-size:13px}
+ .in-room .my-stack strong{font-size:21px;color:#e6d198}
+ .in-room .my-summary small{font-size:9px;margin-bottom:1px}
+ .in-room .my-stack span{font-size:10px}
+ .in-room .table-dock .room-controls{gap:5px;padding-top:8px}
+ .in-room .room-controls button{border-radius:6px;min-height:38px;font-size:11px}
+ .in-room .room-controls p{font-size:9px;margin-top:4px}
+ .in-room .notice{display:none}
+}
+@media(max-width:760px) and (max-height:640px){
+ .in-room .table-bar{min-height:36px}
+ .in-room header{top:3px;height:30px}
+ .in-room header button{height:30px;min-height:30px}
+ .in-room .room-strip{min-height:22px;padding-bottom:2px}
+ .in-room .online-table,.in-room.large-table .online-table{margin:27px 20px 25px}
+ .in-room .online-seat,.in-room.large-table .online-seat{width:78px}
+ .in-room .online-seat .seat-info,.in-room.large-table .online-seat .seat-info{grid-template-columns:20px minmax(0,1fr);gap:0 3px;padding-top:3px}
+ .in-room .online-seat .avatar,.in-room.large-table .online-seat .avatar{width:20px;height:20px;font-size:11px}
+ .in-room .online-seat .seat-info b,.in-room.large-table .online-seat .seat-info b{font-size:8px;line-height:10px}
+ .in-room .online-seat .seat-info strong,.in-room.large-table .online-seat .seat-info strong{font-size:11px;line-height:13px}
+ .in-room .online-seat .seat-status,.in-room.large-table .online-seat .seat-status{min-height:12px;line-height:10px;margin-top:2px;padding:1px 2px;font-size:7px}
+ .in-room .table-dock,.in-room.large-table .table-dock{min-height:184px}
+ .in-room:not(.playing-hand) .table-dock{min-height:0}
+ .in-room .my-summary .card{width:27px;height:37px}
+ .in-room .online-center .card,.in-room.large-table .online-center .card{width:24px;height:34px;font-size:12px}
+ .in-room .online-center .card .suit{font-size:15px}
+}
