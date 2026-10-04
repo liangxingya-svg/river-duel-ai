@@ -204,5 +204,5 @@ body.in-room{--dock-height:calc(202px + env(safe-area-inset-bottom));font-family
 /* The investment note fits with the three main actions without scrolling. */
 .in-room .table-dock .action-panel{margin-top:0}
 .in-room .action-buttons{margin-top:4px}
-.in-room .table-dock .action-note{font-size:9px;line-height:11px;margin:2px 0 0}
+.in-room #onlineActionNote{font-size:9px;line-height:11px;margin:2px 0 0}
 @media(max-height:640px){.in-room .action-heading{margin-bottom:1px}.in-room .action-buttons{margin-top:2px}}
