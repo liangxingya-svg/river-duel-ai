@@ -5,6 +5,9 @@ const cards=(...ranks)=>{const used=new Map();return ranks.map(r=>{if(r===16)ret
 const type=(rs,t)=>assert(D.classify(cards(...rs)).some(p=>p.type===t),`${rs} should be ${t}`);
 type([3],'single');type([15,15],'pair');type([16,17],'rocket');type([4,4,4,4],'bomb');type([3,3,3,4],'tripleSingle');type([3,3,3,4,4],'triplePair');type([10,11,12,13,14],'straight');type([3,3,4,4,5,5],'pairs');type([3,3,3,4,4,4],'plane');type([3,3,3,4,4,4,8,8],'planeSingle');type([3,3,3,4,4,4,8,8,9,9],'planePair');type([3,3,3,3,8,8],'fourSingle');type([3,3,3,3,8,8,9,9],'fourPair');
 for(const rs of [[11,12,13,14,15],[3,4,5,6],[3,3,4,4],[3,3,3,4,4,4,16,17],[3,3,3,3,16,17],[3,3,3,3,4,4,4,4]])assert.equal(D.classify(cards(...rs)).length,0,rs.join(','));
+// User screenshot regression: A996666 (7 cards) is illegal; AA996666 is four plus two pairs.
+assert.deepEqual(D.classify(cards(14,9,9,6,6,6,6)),[]);
+const fourPair=D.classify(cards(14,14,9,9,6,6,6,6));assert.equal(fourPair[0].type,'fourPair');assert.equal(fourPair[0].length,8);
 assert.equal(D.classify([0,0]).length,0);assert(D.beats(D.classify(cards(3,3,3,3))[0],D.classify(cards(14))[0]));assert(!D.beats(D.classify(cards(15))[0],D.classify(cards(3,3))[0]));
 function ready(g){D.begin(g);D.advanceRunout(g);D.act(g,g.turn,'call');while(g.phase==='rob')D.act(g,g.turn,'norob');while(g.phase==='double')D.act(g,g.turn,'nodouble')}
 const g=D.create([2000,2000,2000],['A','B','C']);ready(g);assert.deepEqual(g.players.map(p=>p.cards.length),[20,17,17]);assert.equal(new Set([...g.players.flatMap(p=>p.cards)]).size,54);assert.deepEqual(D.view(g,1).players[0].cards,[]);assert.deepEqual(D.view(g,1).players[2].cards,[]);assert.equal(D.view(g,1).bottom.length,3);
