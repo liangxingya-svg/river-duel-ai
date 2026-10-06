@@ -1,5 +1,7 @@
 # 河牌对决 · River Duel 0.0.16
 
+网站入口：[https://riverduel.cn/](https://riverduel.cn/)。
+
 网页德州扑克，虚拟筹码，无充值或提现。
 
 - `index.html`：大厅入口，选择好友房、多人练习或经典单挑。
